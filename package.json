@@ -1,0 +1,53 @@
+{
+    "name": "@gik/tools-streamer",
+    "version": "0.0.2",
+    "description": "GIK's take on the Observable",
+    "license": "MIT",
+    "homepage": "https://github.com/gikmx/tools",
+    "contributors": [
+        "Héctor Menéndez <hector@gik.mx> (hectormenendez.com)"
+    ],
+    "keywords": [
+        "logger",
+        "pino"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gikmx/tools-streamer"
+    },
+    "bugs": {
+        "url": "https://github.com/gikmx/tools/issues"
+    },
+    "engines": {
+        "node": ">=6.11.3",
+        "npm": ">=5.4.2"
+    },
+    "main": "lib/logger.js",
+    "directories": {
+        "test": "./test",
+        "src": "./src",
+        "out": "./lib"
+    },
+    "scripts": {
+        "ver:beta": "gik-npm version:prerelease",
+        "ver:commit": "gik-npm version:patch",
+        "lint:docs": "gik-npm docs:lint",
+        "lint:code": "gik-npm lint:src",
+        "lint:test": "gik-npm lint:test",
+        "build": "npm run lint:code -s && gik-npm build",
+        "docs": "npm run lint:docs -s && gik-npm docs",
+        "test": "npm run lint:test -s && gik-npm test",
+        "verify": "npm run build -s && npm run test -s",
+        "start": "nodemon -V -w $npm_package_directories_src -w $npm_package_directories_test -x 'npm run verify -s'",
+        "pub:beta": "npm run verify -s && npm run ver:beta -s && npm publish --access public --tag beta",
+        "pub:latest": "npm run verify -s && npm publish --access public --tag latest",
+        "precommit": "npm run verify -s && npm run ver:commit -s && npm run docs -s",
+        "prepublishOnly": "npm run docs -s"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@gik/eslint-config": "0.0.3",
+        "@gik/npm": "0.0.29",
+        "nodemon": "^1.12.1"
+    }
+}
