@@ -1,6 +1,6 @@
 {
     "name": "@gik/tools-streamer",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "GIK's take on the Observable",
     "license": "MIT",
     "homepage": "https://github.com/gikmx/tools",
@@ -44,7 +44,12 @@
         "precommit": "npm run verify -s && npm run ver:commit -s && npm run docs -s",
         "prepublishOnly": "npm run docs -s"
     },
-    "dependencies": {},
+    "dependencies": {
+        "@gik/tools-checker": "0.0.8",
+        "@gik/tools-logger": "0.0.3",
+        "@gik/tools-thrower": "^0.1.9",
+        "rxjs": "^5.4.3"
+    },
     "devDependencies": {
         "@gik/eslint-config": "0.0.3",
         "@gik/npm": "0.0.29",
