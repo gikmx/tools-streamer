@@ -1,6 +1,6 @@
 {
     "name": "@gik/tools-streamer",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "GIK's take on the Observable",
     "license": "MIT",
     "homepage": "https://github.com/gikmx/tools",
@@ -22,7 +22,7 @@
         "node": ">=6.11.3",
         "npm": ">=5.4.2"
     },
-    "main": "lib/logger.js",
+    "main": "lib/streamer.js",
     "directories": {
         "test": "./test",
         "src": "./src",

@@ -1,4 +1,4 @@
-# [@gik/tools-streamer](https://github.com/gikmx/tools) *0.0.3*
+# [@gik/tools-streamer](https://github.com/gikmx/tools) *0.0.5*
 > GIK's take on the Observable
 
 ## Contributors
@@ -20,16 +20,15 @@
     -   [fromDirReadRecursive](#fromdirreadrecursive)
     -   [fromFileRead](#fromfileread)
     -   [fromFileWrite](#fromfilewrite)
--   [\_\_types](#__types)
-    -   [NodeStat](#nodestat)
-    -   [NodeOutput](#nodeoutput)
-    -   [NodePath](#nodepath)
-    -   [StreamBoolean](#streamboolean)
-    -   [StreamString](#streamstring)
-    -   [StreamStat](#streamstat)
-    -   [StreamOutput](#streamoutput)
-    -   [StreamPath](#streampath)
-    -   [StreamParamError](#streamparamerror)
+-   [NodeStat](#nodestat)
+-   [NodeOutput](#nodeoutput)
+-   [NodePath](#nodepath)
+-   [StreamBoolean](#streamboolean)
+-   [StreamString](#streamstring)
+-   [StreamStat](#streamstat)
+-   [StreamOutput](#streamoutput)
+-   [StreamPath](#streampath)
+-   [StreamParamError](#streamparamerror)
 
 ## streamer
 
@@ -47,7 +46,7 @@ Determine if given path is accessible.
 
 -   `path` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** A path to the node you want to check.
 
-Returns **StreamBoolean** Wether the file is accessible or not.
+Returns **[StreamBoolean](#streamboolean)** Wether the file is accessible or not.
 
 ### fromStat
 
@@ -60,7 +59,7 @@ Determine statistics about a file system node.
 
 -   Throws **[Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)** When given an invalid node.
 
-Returns **StreamStat** stat object for the node.
+Returns **[StreamStat](#streamstat)** stat object for the node.
 
 ### fromSpawn
 
@@ -71,7 +70,7 @@ Spawn a shell command.
 -   `command` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The command you wish to spawn.
 -   `config` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Configs sent to spawn command.
 
-Returns **StreamOutput** Each chunk of either stdout or stderr data.
+Returns **[StreamOutput](#streamoutput)** Each chunk of either stdout or stderr data.
 
 ### fromDirMake
 
@@ -84,7 +83,7 @@ Creates a directory.
 
 -   Throws **[Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)** When directory cannot be created.
 
-Returns **StreamString** The path of the directory that was just created.
+Returns **[StreamString](#streamstring)** The path of the directory that was just created.
 
 ### fromDirRequire
 
@@ -97,7 +96,7 @@ Requires a directory path, if the directory does not exists, it's created.
 
 -   Throws **[Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)** When requested path exists and is not a directory.
 
-Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;StreamString>** The path of the directory.
+Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[StreamString](#streamstring)>** The path of the directory.
 
 ### fromDirRead
 
@@ -123,7 +122,7 @@ Get path of nodes in given directory (recursively).
 
 -   Throws **[Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)** When requested path exists and is not a directory.
 
-Returns **StreamPath** The path of the directory.
+Returns **[StreamPath](#streampath)** The path of the directory.
 
 ### fromFileRead
 
@@ -149,13 +148,10 @@ Writes a file on the disk.
 
 Returns **Observable&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>** The future value `true` if write was succesful.
 
-## \_\_types
-
-### NodeStat
-
--   **See: [fs.stat](https://nodejs.org/api/fs.html#fs_class_fs_stats) for more properties.**
+## NodeStat
 
 A stream containing stat from node.
+see [fs.stat](https://nodejs.org/api/fs.html#fs_class_fs_stats) for more properties.
 
 Type: [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -164,7 +160,7 @@ Type: [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 -   `isDirectory` **function (void)** Determine if node is a directory.
 -   `isFile` **function (void)** Determine if node is a file.
 
-### NodeOutput
+## NodeOutput
 
 Type: [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -173,42 +169,42 @@ Type: [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 -   `type` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The type of chunk that is being received. (stderr || stdout)
 -   `data` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The actual output.
 
-### NodePath
+## NodePath
 
 Type: [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 **Properties**
 
 -   `path` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The full path for the node
--   `data` **NodeStat** The actual output.
+-   `data` **[NodeStat](#nodestat)** The actual output.
 
-### StreamBoolean
+## StreamBoolean
 
 Type: Observable&lt;[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)>
 
-### StreamString
+## StreamString
 
 Type: Observable&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>
 
-### StreamStat
+## StreamStat
 
 A stream containing stat from node.
 
-Type: Observable&lt;NodeStat>
+Type: Observable&lt;[NodeStat](#nodestat)>
 
-### StreamOutput
-
-A stream containing stat from node.
-
-Type: Observable&lt;NodeOutput>
-
-### StreamPath
+## StreamOutput
 
 A stream containing stat from node.
 
-Type: Observable&lt;NodePath>
+Type: Observable&lt;[NodeOutput](#nodeoutput)>
 
-### StreamParamError
+## StreamPath
+
+A stream containing stat from node.
+
+Type: Observable&lt;[NodePath](#nodepath)>
+
+## StreamParamError
 
 Thrown when a parameter is not the correct type.
 
