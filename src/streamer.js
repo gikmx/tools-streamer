@@ -1,7 +1,7 @@
 import FS from 'fs';
 import PATH from 'path';
 import { SPAWN } from 'child_process';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import Thrower from '@gik/tools-thrower';
 import { Is } from '@gik/tools-checker';
 import Logger from '@gik/tools-logger';
@@ -19,6 +19,7 @@ const log = Logger();
  * @memberof Tools
  */
 export const $ = Observable;
+export { Subject, Observable };
 
 /**
  * Determine if given path is accessible.
