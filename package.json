@@ -1,6 +1,6 @@
 {
     "name": "@gik/tools-streamer",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "GIK's take on the Observable",
     "license": "MIT",
     "homepage": "https://github.com/gikmx/tools",

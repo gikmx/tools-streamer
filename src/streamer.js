@@ -130,7 +130,7 @@ export const $fromDirRequire = (dirpath) => {
         // path exists and is not a directory? that's an error.
         .map(function isDir(stat) {
             if (!stat.isDirectory())
-                throw new Error(`Expecting "${path}" to be a directory.`);
+                Thrower(`Expecting "${path}" to be a directory.`);
             return path;
         })
         .do(() => log.debug('$fromDirRequire->end: "%s"', path));
@@ -190,7 +190,7 @@ export const $fromFileRead = (path) => {
     return $
         .fromAccess(path)
         .map(function readAccess(access) {
-            if (!access) throw new Error(`Could not read ${access}`);
+            if (!access) Thrower(`Could not read ${path}`);
             return access;
         })
         .switchMapTo($.bindNodeCallback(FS.readFile)(path, 'utf-8'))

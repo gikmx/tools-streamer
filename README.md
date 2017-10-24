@@ -1,4 +1,4 @@
-# [@gik/tools-streamer](https://github.com/gikmx/tools) *0.0.5*
+# [@gik/tools-streamer](https://github.com/gikmx/tools) *0.0.6*
 > GIK's take on the Observable
 
 ## Contributors
