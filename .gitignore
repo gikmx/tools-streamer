@@ -5,6 +5,6 @@ coverage
 .DS_*
 lib
 .tern-port
-package-lock.json
-yarn.lock
+package-lock.json*
+yarn.lock*
 .nyc_output

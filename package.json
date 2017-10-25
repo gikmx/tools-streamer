@@ -1,15 +1,19 @@
 {
     "name": "@gik/tools-streamer",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "GIK's take on the Observable",
     "license": "MIT",
     "homepage": "https://github.com/gikmx/tools",
     "contributors": [
-        "Héctor Menéndez <hector@gik.mx> (hectormenendez.com)"
+        "Héctor Menéndez <hector@gik.mx>"
     ],
     "keywords": [
-        "logger",
-        "pino"
+        "rxjs",
+        "functional programming",
+        "observable",
+        "streaming",
+        "utility",
+        "tools"
     ],
     "repository": {
         "type": "git",
@@ -29,29 +33,25 @@
         "out": "./lib"
     },
     "scripts": {
-        "ver:beta": "gik-npm version:prerelease",
-        "ver:commit": "gik-npm version:patch",
-        "lint:docs": "gik-npm docs:lint",
-        "lint:code": "gik-npm lint:src",
-        "lint:test": "gik-npm lint:test",
-        "build": "npm run lint:code -s && gik-npm build",
-        "docs": "npm run lint:docs -s && gik-npm docs",
-        "test": "npm run lint:test -s && gik-npm test",
-        "verify": "npm run build -s && npm run test -s",
-        "start": "nodemon -V -w $npm_package_directories_src -w $npm_package_directories_test -x 'npm run verify -s'",
-        "pub:beta": "npm run verify -s && npm run ver:beta -s && npm publish --access public --tag beta",
-        "pub:latest": "npm run verify -s && npm publish --access public --tag latest",
-        "precommit": "npm run verify -s && npm run ver:commit -s && npm run docs -s",
-        "prepublishOnly": "npm run docs -s"
+        "ver": "gik-npm version",
+        "lint": "gik-npm lint",
+        "docs": "gik-npm docs",
+        "build": "gik-npm build",
+        "test": "gik-npm test",
+        "verify": "gik-npm lint:src && gik-npm lint:test && gik-npm build && gik-npm test",
+        ":start": "nodemon $(printenv | grep -E '^npm_package_directories' | grep -vE '^npm_package_directories_out' | cut -d'=' -f2 | xargs -I {} printf '-w %s ' {})",
+        "start": "npm run :start -s -- -e 'js,json' -x ",
+        "pub": "npm run verify -s && npm run docs -s && npm publish --access public --tag",
+        "precommit": "npm run verify -s && gik-npm version patch && npm run docs -s"
     },
     "dependencies": {
         "@gik/tools-checker": "0.0.8",
-        "@gik/tools-logger": "0.0.3",
+        "@gik/tools-logger": "0.0.4",
         "@gik/tools-thrower": "^0.1.9",
-        "rxjs": "^5.4.3"
+        "rxjs": "^5.5.1"
     },
     "devDependencies": {
-        "@gik/eslint-config": "0.0.3",
+        "@gik/eslint-config": "0.0.4",
         "@gik/npm": "0.0.29",
         "nodemon": "^1.12.1"
     }

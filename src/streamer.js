@@ -1,6 +1,6 @@
 import FS from 'fs';
 import PATH from 'path';
-import { SPAWN } from 'child_process';
+import { spawn as SPAWN } from 'child_process';
 import { Observable, Subject } from 'rxjs';
 import Thrower from '@gik/tools-thrower';
 import { Is } from '@gik/tools-checker';
@@ -10,21 +10,20 @@ import { StreamParamError as ParamError } from './types';
 const log = Logger();
 
 /**
- * An utility belt for our most common operations with Observables, using RxJS.<br>
- *
- * TODO:
- * - Add unit tests for all methods.
- *
  * @module streamer
  * @memberof Tools
+ * @description An utility belt for our most common operations with RXJS's Observables.
+ *
+ * @todo Add unit tests for all methods.
  */
 export const $ = Observable;
 export { Subject, Observable };
 
 /**
- * Determine if given path is accessible.
  * @name fromAccess
  * @memberof Tools.streamer
+ * @description Determine if given path is accessible.
+ *
  * @param {string} path - A path to the node you want to check.
  * @returns {StreamBoolean} - Wether the file is accessible or not.
  */
@@ -39,9 +38,10 @@ export const $fromAccess = (path) => {
 };
 
 /**
- * Determine statistics about a file system node.
  * @name fromStat
  * @memberof Tools.streamer
+ * @description Determine statistics about a file system node.
+ *
  * @param {string} path - A path to the node you want to check.
  * @returns {StreamStat} - stat object for the node.
  * @throws {Error} - When given an invalid node.
@@ -60,18 +60,27 @@ export const $fromPath = (path) => {
 };
 
 /**
- * Spawn a shell command.
  * @name fromSpawn
  * @memberof Tools.streamer
+ * @description Spawn a shell command.
+ *
  * @param {string} command - The command you wish to spawn.
  * @param {Object} config - Configs sent to spawn command.
  * @returns {StreamOutput} - Each chunk of either stdout or stderr data.
  */
 export const $fromSpawn = (command, config = {}) => {
-    if (!Is.string(command))
-        Thrower([ParamError.message, 'command', 'string', typeof path], ParamError.name);
-    if (!Is.object(command))
-        Thrower([ParamError.message, 'command', 'Object', typeof path], ParamError.name);
+    if (!Is.string(command)) {
+        Thrower(
+            [ParamError.message, 'command', '{string}', typeof command],
+            ParamError.name,
+        );
+    }
+    if (!Is.object(config)) {
+        Thrower(
+            [ParamError.message, 'config', '{Object}', typeof config],
+            ParamError.name,
+        );
+    }
     log.debug('$fromSpawn->ini: "%s"', command);
     return $.create(function create(o) {
         const args = command.split(' ');
@@ -94,9 +103,10 @@ export const $fromSpawn = (command, config = {}) => {
 };
 
 /**
- * Creates a directory.
  * @name fromDirMake
  * @memberof Tools.streamer
+ * @description Creates a directory.
+ *
  * @param {string} path - The directory to be created.
  * @returns {StreamString} - The path of the directory that was just created.
  * @throws {Error} - When directory cannot be created.
@@ -111,10 +121,11 @@ export const $fromDirMake = (path) => {
 };
 
 /**
- * Requires a directory path, if the directory does not exists, it's created.
  * @name fromDirRequire
  * @memberof Tools.streamer
- * @param {string} path - The requested directory.
+ * @description Requires a directory path, if the directory does not exists, it's created.
+ *
+ * @param {string} dirpath - The requested directory.
  * @returns {StreamString[]} - The path of the directory.
  * @throws {Error} - When requested path exists and is not a directory.
  */
@@ -137,9 +148,10 @@ export const $fromDirRequire = (dirpath) => {
 };
 
 /**
- * Get path of nodes in given directory (non recursively).
  * @name fromDirRead
  * @memberof Tools.streamer
+ * @description Get path of nodes in given directory (non recursively).
+ *
  * @param {string} path - The requested directory.
  * @returns {StreamDirNode[]} - The path of the directory.
  * @throws {Error} - When requested path exists and is not a directory.
@@ -156,9 +168,10 @@ export const $fromDirRead = (path) => {
 };
 
 /**
- * Get path of nodes in given directory (recursively).
  * @name fromDirReadRecursive
  * @memberof Tools.streamer
+ * @description Get path of nodes in given directory (recursively).
+ *
  * @param {string} path - The requested directory.
  * @returns {StreamPath} - The path of the directory.
  * @throws {Error} - When requested path exists and is not a directory.
@@ -177,9 +190,10 @@ export const $fromDirReadRecursive = (path) => {
 };
 
 /**
- * Reads a file from the disk.
  * @name fromFileRead
  * @memberof Tools.streamer
+ * @description Reads a file from the disk.
+ *
  * @param {string} path - The path to the file to read.
  * @returns {Observable.<string>} - The contents of the file.
  */
@@ -198,9 +212,10 @@ export const $fromFileRead = (path) => {
 };
 
 /**
- * Writes a file on the disk.
  * @name fromFileWrite
  * @memberof Tools.streamer
+ * @description Writes a file on the disk.
+ *
  * @param {string} path - The full path for the file.
  * @param {string} content - The contents of the file.
  * @returns {Observable.<string>} - The future value `true` if write was succesful.

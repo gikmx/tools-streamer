@@ -64,7 +64,7 @@ export const StreamPath = {};
  */
 export const StreamParamError = {
     name: 'StreamParamError',
-    message: 'Invalid type sent for %, expecting "%s", got "%s"',
+    message: 'Invalid type sent for %s, expecting "%s", got "%s"',
 };
 
 export default {
