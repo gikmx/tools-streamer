@@ -11,7 +11,6 @@ const log = Logger();
 
 /**
  * @module streamer
- * @memberof Tools
  * @description An utility belt for our most common operations with RXJS's Observables.
  *
  * @todo Add unit tests for all methods.
@@ -21,7 +20,7 @@ export { Subject, Observable };
 
 /**
  * @name fromAccess
- * @memberof Tools.streamer
+ * @memberof streamer
  * @description Determine if given path is accessible.
  *
  * @param {string} path - A path to the node you want to check.
@@ -39,7 +38,7 @@ export const $fromAccess = (path) => {
 
 /**
  * @name fromStat
- * @memberof Tools.streamer
+ * @memberof streamer
  * @description Determine statistics about a file system node.
  *
  * @param {string} path - A path to the node you want to check.
@@ -61,7 +60,7 @@ export const $fromPath = (path) => {
 
 /**
  * @name fromSpawn
- * @memberof Tools.streamer
+ * @memberof streamer
  * @description Spawn a shell command.
  *
  * @param {string} command - The command you wish to spawn.
@@ -104,7 +103,7 @@ export const $fromSpawn = (command, config = {}) => {
 
 /**
  * @name fromDirMake
- * @memberof Tools.streamer
+ * @memberof streamer
  * @description Creates a directory.
  *
  * @param {string} path - The directory to be created.
@@ -122,7 +121,7 @@ export const $fromDirMake = (path) => {
 
 /**
  * @name fromDirRequire
- * @memberof Tools.streamer
+ * @memberof streamer
  * @description Requires a directory path, if the directory does not exists, it's created.
  *
  * @param {string} dirpath - The requested directory.
@@ -149,7 +148,7 @@ export const $fromDirRequire = (dirpath) => {
 
 /**
  * @name fromDirRead
- * @memberof Tools.streamer
+ * @memberof streamer
  * @description Get path of nodes in given directory (non recursively).
  *
  * @param {string} path - The requested directory.
@@ -169,7 +168,7 @@ export const $fromDirRead = (path) => {
 
 /**
  * @name fromDirReadRecursive
- * @memberof Tools.streamer
+ * @memberof streamer
  * @description Get path of nodes in given directory (recursively).
  *
  * @param {string} path - The requested directory.
@@ -191,7 +190,7 @@ export const $fromDirReadRecursive = (path) => {
 
 /**
  * @name fromFileRead
- * @memberof Tools.streamer
+ * @memberof streamer
  * @description Reads a file from the disk.
  *
  * @param {string} path - The path to the file to read.
@@ -213,7 +212,7 @@ export const $fromFileRead = (path) => {
 
 /**
  * @name fromFileWrite
- * @memberof Tools.streamer
+ * @memberof streamer
  * @description Writes a file on the disk.
  *
  * @param {string} path - The full path for the file.

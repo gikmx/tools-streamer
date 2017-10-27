@@ -4,7 +4,7 @@
  * @typedef {Object}
  * @property {function(void)} isDirectory - Determine if node is a directory.
  * @property {function(void)} isFile - Determine if node is a file.
- * @memberof Types
+ * @memberof streamer.Types
  */
 export const NodeStat = {};
 
@@ -12,7 +12,7 @@ export const NodeStat = {};
  * @typedef {Object}
  * @property {string} type - The type of chunk that is being received. (stderr || stdout)
  * @property {string} data - The actual output.
- * @memberof Types
+ * @memberof streamer.Types
  */
 export const NodeOutput = {};
 
@@ -20,47 +20,47 @@ export const NodeOutput = {};
  * @typedef {Object}
  * @property {string} path - The full path for the node
  * @property {NodeStat} data - The actual output.
- * @memberof Types
+ * @memberof streamer.Types
  */
 export const NodePath = {};
 
 /**
  * @typedef {Observable.<boolean>}
- * @memberof Types
+ * @memberof streamer.Types
  */
 export const StreamBoolean = {};
 
 /**
  * @typedef {Observable.<string>}
- * @memberof Types
+ * @memberof streamer.Types
  */
 export const StreamString = {};
 
 /**
  * A stream containing stat from node.
  * @typedef {Observable.<NodeStat>}
- * @memberof Types
+ * @memberof streamer.Types
  */
 export const StreamStat = {};
 
 /**
  * A stream containing stat from node.
  * @typedef {Observable.<NodeOutput>}
- * @memberof Types
+ * @memberof streamer.Types
  */
 export const StreamOutput = {};
 
 /**
  * A stream containing stat from node.
  * @typedef {Observable.<NodePath>}
- * @memberof Types
+ * @memberof streamer.Types
  */
 export const StreamPath = {};
 
 /**
  * Thrown when a parameter is not the correct type.
  * @typedef {Error}
- * @memberof Types
+ * @memberof streamer.Types
  */
 export const StreamParamError = {
     name: 'StreamParamError',
