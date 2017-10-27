@@ -1,6 +1,6 @@
 {
     "name": "@gik/tools-streamer",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "description": "GIK's take on the Observable",
     "license": "MIT",
     "homepage": "https://github.com/gikmx/tools",
@@ -45,7 +45,7 @@
     },
     "dependencies": {
         "@gik/tools-checker": "0.0.8",
-        "@gik/tools-logger": "0.0.5",
+        "@gik/tools-logger": "0.0.6",
         "@gik/tools-thrower": "^0.1.9",
         "rxjs": "^5.5.2"
     },
