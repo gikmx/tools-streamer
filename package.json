@@ -1,6 +1,6 @@
 {
     "name": "@gik/tools-streamer",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "description": "GIK's take on the Observable",
     "license": "MIT",
     "homepage": "https://github.com/gikmx/tools",
@@ -26,6 +26,10 @@
         "node": ">=6.11.3",
         "npm": ">=5.4.2"
     },
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "main": "lib/streamer.js",
     "directories": {
         "test": "./__tests__",
@@ -33,25 +37,21 @@
         "out": "./lib"
     },
     "scripts": {
-        "docs": "gik-npm docs",
         "test": "gik-npm lint test && gik-npm test",
         "build": "gik-npm lint src && gik-npm build",
         "verify": "npm run build -s && npm run test -s",
-        "start": "gik-npm start 'npm run verify -s'",
-        "pub": "npm run verify -s && npm run docs -s && npm publish --access public --tag",
-        "precommit": "npm run verify -s && gik-npm version patch && npm run docs -s",
-        "pub:beta": "npm run verify -s && npm publish --access public --tag beta",
-        "pub:latest": "npm run verify -s && npm publish --access public --tag latest"
+        "start": "gik-npm start 'npm run verify'",
+        "pub": "npm run verify -s && npm publish --access public --tag",
+        "precommit": "npm run verify -s && gik-npm version patch && gik-npm docs"
     },
     "dependencies": {
-        "@gik/tools-checker": "0.0.8",
-        "@gik/tools-logger": "0.0.6",
-        "@gik/tools-thrower": "^0.1.9",
+        "@gik/tools-checker": "0.0.9",
+        "@gik/tools-logger": "0.0.7",
+        "@gik/tools-thrower": "^0.1.11",
         "rxjs": "^5.5.2"
     },
     "devDependencies": {
         "@gik/eslint-config": "0.0.4",
-        "@gik/npm": "^0.1.4",
-        "nodemon": "^1.12.1"
+        "@gik/npm": "^0.1.10"
     }
 }

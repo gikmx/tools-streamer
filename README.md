@@ -1,10 +1,12 @@
-# [@gik/tools-streamer](https://github.com/gikmx/tools) *0.0.9*
+# [@gik/tools-streamer](https://github.com/gikmx/tools) *0.0.10*
 > GIK's take on the Observable
 
 ##### Contributors
 - [Héctor Menéndez](mailto:hector@gik.mx) []()
 
 ##### Supported platforms
+- darwin
+- linux
 
 #### <a name="table-of-contents"></a> Table of contents
 - **[streamer](#streamer)** An utility belt for our most common operations with RXJS's Observables.
@@ -318,6 +320,149 @@ Writes a file on the disk.
 
 
 <small>**[▲ Top](#streamer)**</small>
+
+---
+
+# <a name="Types"></a> Types
+
+###### Members
+
+- [NodeOutput](#Types.NodeOutput)
+- [NodePath](#Types.NodePath)
+- [StreamBoolean](#Types.StreamBoolean)
+- [StreamString](#Types.StreamString)
+- [StreamStat](#Types.StreamStat)
+- [StreamOutput](#Types.StreamOutput)
+- [StreamPath](#Types.StreamPath)
+- [StreamParamError](#Types.StreamParamError)
+
+<small>**[▲ Top](#table-of-contents)**</small>
+
+---
+
+## <a name="Types.NodeOutput"></a> NodeOutput
+> static  typedef of [`Types`](#Types)
+
+###### Properties
+<table>
+    <tr>
+        <td style="white-space: nowrap;">
+            <code>type</code>
+        </td>
+        <td style="white-space: nowrap;">
+                <a href="#string">string</a>
+        </td>
+        <td>The type of chunk that is being received. (stderr || stdout)</td>
+    </tr><tr>
+        <td style="white-space: nowrap;">
+            <code>data</code>
+        </td>
+        <td style="white-space: nowrap;">
+                <a href="#string">string</a>
+        </td>
+        <td>The actual output.</td>
+    </tr>
+</table>
+
+
+
+<small>**[▲ Top](#Types)**</small>
+
+---
+
+## <a name="Types.NodePath"></a> NodePath
+> static  typedef of [`Types`](#Types)
+
+###### Properties
+<table>
+    <tr>
+        <td style="white-space: nowrap;">
+            <code>path</code>
+        </td>
+        <td style="white-space: nowrap;">
+                <a href="#string">string</a>
+        </td>
+        <td>The full path for the node</td>
+    </tr><tr>
+        <td style="white-space: nowrap;">
+            <code>data</code>
+        </td>
+        <td style="white-space: nowrap;">
+                <a href="#NodeStat">NodeStat</a>
+        </td>
+        <td>The actual output.</td>
+    </tr>
+</table>
+
+
+
+<small>**[▲ Top](#Types)**</small>
+
+---
+
+## <a name="Types.StreamBoolean"></a> StreamBoolean
+> static  typedef of [`Types`](#Types)
+
+
+
+<small>**[▲ Top](#Types)**</small>
+
+---
+
+## <a name="Types.StreamString"></a> StreamString
+> static  typedef of [`Types`](#Types)
+
+
+
+<small>**[▲ Top](#Types)**</small>
+
+---
+
+## <a name="Types.StreamStat"></a> StreamStat
+> static  typedef of [`Types`](#Types)
+
+
+A stream containing stat from node.
+
+
+
+<small>**[▲ Top](#Types)**</small>
+
+---
+
+## <a name="Types.StreamOutput"></a> StreamOutput
+> static  typedef of [`Types`](#Types)
+
+
+A stream containing stat from node.
+
+
+
+<small>**[▲ Top](#Types)**</small>
+
+---
+
+## <a name="Types.StreamPath"></a> StreamPath
+> static  typedef of [`Types`](#Types)
+
+
+A stream containing stat from node.
+
+
+
+<small>**[▲ Top](#Types)**</small>
+
+---
+
+## <a name="Types.StreamParamError"></a> StreamParamError
+> static  typedef of [`Types`](#Types)
+
+
+Thrown when a parameter is not the correct type.
+
+
+
+<small>**[▲ Top](#Types)**</small>
 
 ---
 
