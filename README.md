@@ -1,5 +1,5 @@
-# [@gik/tools-streamer](https://github.com/gikmx/tools) *0.0.10*
-> GIK's take on the Observable
+# [@gik/tools-streamer](http://gik.mx) *0.0.10*
+> RXjs extra operators. Part of our [tools suite](https://github.com/gikmx/tools).
 
 ##### Contributors
 - [Héctor Menéndez](mailto:hector@gik.mx) []()
@@ -24,10 +24,12 @@
 # <a name="streamer"></a> streamer
 
 An utility belt for our most common operations with RXJS's Observables.
+> - [Standalone version](https://github.com/gikmx/tools-streamer).
+> - [Report a Bug](https://github.com/gikmx/tools-streamer/issues).
 
 
 ###### To do
-- [ ] Add unit tests for all methods.
+- [ ] Add unit tests for all operators.
 
 
 ###### Members

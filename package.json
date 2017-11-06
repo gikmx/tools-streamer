@@ -1,9 +1,9 @@
 {
     "name": "@gik/tools-streamer",
     "version": "0.0.10",
-    "description": "GIK's take on the Observable",
+    "description": "RXjs extra operators. Part of our [tools suite](https://github.com/gikmx/tools).",
     "license": "MIT",
-    "homepage": "https://github.com/gikmx/tools",
+    "homepage": "http://gik.mx",
     "contributors": [
         "Héctor Menéndez <hector@gik.mx>"
     ],

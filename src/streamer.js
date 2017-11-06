@@ -12,8 +12,9 @@ const log = Logger();
 /**
  * @module streamer
  * @description An utility belt for our most common operations with RXJS's Observables.
- *
- * @todo Add unit tests for all methods.
+ * > - [Standalone version](https://github.com/gikmx/tools-streamer).
+ * > - [Report a Bug](https://github.com/gikmx/tools-streamer/issues).
+ * @todo Add unit tests for all operators.
  */
 export const $ = Observable;
 export { Subject, Observable };
