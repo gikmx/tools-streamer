@@ -1,4 +1,4 @@
-# [@gik/tools-streamer](http://gik.mx) *0.0.10*
+# [@gik/tools-streamer](http://gik.mx) *0.0.11*
 > RXjs extra operators. Part of our [tools suite](https://github.com/gikmx/tools).
 
 ##### Contributors

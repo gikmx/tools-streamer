@@ -1,6 +1,6 @@
 {
     "name": "@gik/tools-streamer",
-    "version": "0.0.10",
+    "version": "0.0.11",
     "description": "RXjs extra operators. Part of our [tools suite](https://github.com/gikmx/tools).",
     "license": "MIT",
     "homepage": "http://gik.mx",
@@ -52,6 +52,6 @@
     },
     "devDependencies": {
         "@gik/eslint-config": "0.0.4",
-        "@gik/npm": "^0.1.10"
+        "@gik/npm": "^0.1.11"
     }
 }
